@@ -9,6 +9,7 @@
   "dependencies": {
     "@vue/composition-api": "^1.4.6",
     "pinia": "^2.0.11",
+    "pinia-plugin-persistedstate": "^1.6.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3"
   },
