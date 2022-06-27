@@ -41,7 +41,20 @@ import BoardList from "../components/BoardList.vue";
 import AddListForm from "../components/AddListForm.vue";
 import { useBoardStore } from "@/stores/board";
 import { CogIcon } from "@heroicons/vue/solid";
+// import { storeToRefs } from "pinia";
 
 const boardStore = useBoardStore();
+// const { lists } = storeToRefs(boardStore);
 const lists = boardStore.lists;
 </script>
+
+<style scoped>
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-thumb {
+	background: #9ca3af;
+	border-radius: 6px;
+}
+</style>
