@@ -10,7 +10,6 @@
   "dependencies": {
     "@headlessui/vue": "^1.6.5",
     "pinia": "^2.0.14",
-    "pinia-plugin-persistedstate": "^1.6.1",
     "uuid": "^8.3.2",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16",
