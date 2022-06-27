@@ -46,6 +46,7 @@
 									<input
 										v-model="task.title"
 										type="text"
+										autocomplete="off"
 										placeholder="Enter Title..."
 										class="form-input rounded w-full mb-2"
 									/>
@@ -61,6 +62,11 @@
 										placeholder="Enter Due Date..."
 										class="form-input rounded w-full"
 									/>
+
+									<p class="text-red-500 text-sm mt-4 text-center" v-if="error">
+										{{ error }}
+									</p>
+
 									<div class="mt-4">
 										<div>
 											<button
@@ -100,6 +106,7 @@ const props = defineProps({ task: Object });
 const boardStore = useBoardStore();
 
 const isOpen = ref(false);
+let error = ref("");
 
 function closeModal() {
 	isOpen.value = false;
@@ -114,12 +121,19 @@ let task = reactive({
 });
 
 function updateCard() {
+	if (!task.title) {
+		error.value = "Title field is required";
+		return;
+	}
+
 	boardStore.updateItem({
 		itemId: props.task.id,
 		title: task.title,
 		description: task.description,
 		date: task.date,
 	});
+
+	error.value = "";
 
 	closeModal();
 }

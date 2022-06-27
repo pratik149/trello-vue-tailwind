@@ -47,6 +47,7 @@
 										v-model="task.title"
 										type="text"
 										placeholder="Enter Title..."
+										autocomplete="off"
 										class="form-input rounded w-full mb-2"
 									/>
 									<textarea
@@ -61,6 +62,11 @@
 										placeholder="Enter Due Date..."
 										class="form-input rounded w-full"
 									/>
+
+									<p class="text-red-500 text-sm mt-4 text-center" v-if="error">
+										{{ error }}
+									</p>
+
 									<div class="mt-4">
 										<div>
 											<button
@@ -101,12 +107,13 @@ const boardStore = useBoardStore();
 
 const isOpen = ref(false);
 
-const now = new Date();
 let task = reactive({
 	title: "",
 	description: "",
-	date: new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().substring(0, 19),
+	date: "",
 });
+
+let error = ref("");
 
 function closeModal() {
 	isOpen.value = false;
@@ -116,6 +123,11 @@ function openModal() {
 }
 
 function addNewCard() {
+	if (!task.title) {
+		error.value = "Title field is required";
+		return;
+	}
+
 	boardStore.addItem({
 		listId: props.listId,
 		title: task.title,
@@ -126,6 +138,7 @@ function addNewCard() {
 	task.title = "";
 	task.description = "";
 	task.date = "";
+	error.value = "";
 
 	closeModal();
 }
