@@ -1,10 +1,12 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
 	<header class="shrink-0 flex justify-between bg-white px-4 py-3">
-		<router-link class="text-2xl font-black tracking-tight" to="/">Simply Trello</router-link>
+		<RouterLink class="text-2xl font-black tracking-tight" to="/">Simply Trello</RouterLink>
 		<nav>
-			<router-link class="text-sm font-medium px-3 py-2 rounded-md hover:bg-gray-100" to="#"
-				>My boards</router-link
-			>
+			<RouterLink class="text-sm font-medium px-3 py-2 rounded-md hover:bg-gray-100" to="#">My boards</RouterLink>
 			<button class="ml-3">
 				<img
 					src="@/assets/img/user.png"

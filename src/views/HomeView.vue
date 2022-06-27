@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
 	<main class="py-20">
 		<div class="max-w-md text-center mx-auto">
@@ -8,12 +12,12 @@
 			</p>
 		</div>
 		<div class="flex justify-center mt-4">
-			<router-link
+			<RouterLink
 				to="/board"
 				class="text-center text-3xl font-extrabold text-gray-800 rounded-lg bg-blue-100 px-4 py-2 hover:bg-blue-600 hover:text-white transition ease-out duration-150"
 			>
 				Trello Board
-			</router-link>
+			</RouterLink>
 		</div>
 	</main>
 </template>
