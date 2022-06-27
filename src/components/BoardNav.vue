@@ -4,7 +4,7 @@ import { RouterLink } from "vue-router";
 
 <template>
 	<header class="shrink-0 flex justify-between bg-white px-4 py-3">
-		<RouterLink class="text-2xl font-black tracking-tight" to="/">Simply Trello</RouterLink>
+		<RouterLink class="text-2xl font-black tracking-tight" to="/">Trello Vue</RouterLink>
 		<nav>
 			<RouterLink class="text-sm font-medium px-3 py-2 rounded-md hover:bg-gray-100" to="/">Home</RouterLink>
 			<button class="ml-3">

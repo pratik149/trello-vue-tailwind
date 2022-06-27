@@ -1,10 +1,6 @@
 <template>
-	<button
-		type="button"
-		@click="openModal"
-		class="w-8 h-8 bg-gray-50 place-content-center rounded-md text-gray-600 hover:text-black hover:bg-gray-200"
-	>
-		✏️
+	<button type="button" @click="openModal" class="bg-gray-50 rounded-md hover:bg-gray-100 px-2">
+		<PencilIcon class="text-center h-4 w-4 text-gray-500" />
 	</button>
 
 	<TransitionRoot appear :show="isOpen" as="template">
@@ -100,6 +96,7 @@
 import { ref, reactive } from "vue";
 import { TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle } from "@headlessui/vue";
 import { useBoardStore } from "@/stores/board";
+import { PencilIcon } from "@heroicons/vue/solid";
 
 const props = defineProps({ task: Object });
 

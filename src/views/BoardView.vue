@@ -5,12 +5,13 @@
 		<main class="flex-1 overflow-hidden">
 			<div class="flex flex-col h-full">
 				<div class="shrink-0 flex justify-between items-center p-4">
-					<h1 class="text-2xl text-white font-bold">Life</h1>
+					<h1 class="text-2xl text-white font-bold">Wall-E</h1>
 					<div>
 						<button
 							class="inline-flex items-center bg-white/10 hover:bg-white/20 px-3 py-2 font-medium text-sm text-white rounded-md"
 						>
-							<span class="ml-1">⚙️ Settings</span>
+							<CogIcon class="h-5 w-5 text-gray-300" />
+							<span class="ml-2"> Settings</span>
 						</button>
 					</div>
 				</div>
@@ -39,6 +40,7 @@ import BoardNav from "../components/BoardNav.vue";
 import BoardList from "../components/BoardList.vue";
 import AddListForm from "../components/AddListForm.vue";
 import { useBoardStore } from "@/stores/board";
+import { CogIcon } from "@heroicons/vue/solid";
 
 const boardStore = useBoardStore();
 const lists = boardStore.lists;

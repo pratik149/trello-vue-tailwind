@@ -3,7 +3,7 @@
 		<div class="flex items-center justify-between px-3 py-2">
 			<h3 class="text-sm font-semibold text-gray-700">{{ list.title }}</h3>
 			<button class="hover:bg-gray-300 w-8 h-8 rounded-md grid place-content-center" @click="removeList">
-				❌
+				<XIcon class="h-5 w-5 text-gray-400" />
 			</button>
 		</div>
 
@@ -38,6 +38,7 @@ import AddCardForm from "./AddCardForm.vue";
 import { useBoardStore } from "@/stores/board";
 import Draggable from "vuedraggable";
 import { ref } from "vue";
+import { XIcon } from "@heroicons/vue/solid";
 
 const boardStore = useBoardStore();
 const props = defineProps({ list: Object });

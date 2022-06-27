@@ -1,7 +1,7 @@
 [
 	
 	{
-		"title": "Project Overview",
+		"title": "📦 Project Overview",
 		"items": [
 			{
 				"title": "Market study on all available Voice Assistants",
@@ -41,7 +41,7 @@
 		]
 	},
 	{
-		"title": "Tasks",
+		"title": "✅ Tasks",
 		"items": [
 			{
 				"title": "Conifgure Prettier and ESLint in the projects",
@@ -66,7 +66,7 @@
 		]
 	},
 	{
-		"title": "In Progress",
+		"title": "🔃 In Progress",
 		"items": [
 			{
 				"title": "Implement Marketing Landing Page",
@@ -76,7 +76,7 @@
 		]
 	},
 	{
-		"title": "In Review",
+		"title": "🤞 In Review",
 		"items": [
 			{
 				"title": "Measure accuracy of open-source ML models",
@@ -96,7 +96,7 @@
 		]
 	},
 	{
-		"title": "Completed",
+		"title": "🎉 Completed",
 		"items": [
 			{
 				"title": "Initiate the repository",
