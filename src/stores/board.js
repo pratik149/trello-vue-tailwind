@@ -44,5 +44,14 @@ export const useBoardStore = defineStore({
 				1
 			);
 		},
+		moveItem(state, [fromListRef, fromIndex, toListRef, toIndex]) {
+			const fromList =
+				typeof fromListRef === "number"
+					? state.lists[fromListRef].items
+					: getListById(state.lists, fromListRef);
+			const toList =
+				typeof toListRef === "number" ? state.lists[toListRef].items : getListById(state.lists, toListRef);
+			toList.splice(toIndex, 0, fromList.splice(fromIndex, 1)[0]);
+		},
 	},
 });
