@@ -1,9 +1,9 @@
 <template>
 	<li class="group relative bg-white p-3 shadow rounded-md border-b border-gray-300 hover:bg-gray-50">
 		<div>
-			<div>
+			<div class="">
 				<h5 class="font-semibold">{{ task.title }}</h5>
-				<p>{{ task.date }}</p>
+				<p class="max-w-max rounded-sm px-2 py-1 bg-blue-100 mt-2">{{ $dayjs(task.date).format("MMM DD") }}</p>
 			</div>
 			<div class="hidden absolute top-1 right-1 group-hover:grid">
 				<EditCardForm :task="task" />
