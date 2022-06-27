@@ -31,33 +31,53 @@
 						leave-to="opacity-0 scale-95"
 					>
 						<div
-							class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+							class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-lg"
 						>
 							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-								Add Task
+								Edit Task
 							</DialogTitle>
 
 							<div class="mt-4">
 								<form action="" @submit.prevent="updateCard" class="w-full">
-									<input
-										v-model="task.title"
-										type="text"
-										autocomplete="off"
-										placeholder="Enter Title..."
-										class="form-input rounded w-full mb-2"
-									/>
-									<textarea
-										v-model="task.description"
-										placeholder="Enter Description..."
-										class="form-input rounded w-full mb-2"
-									/>
-									<input
-										v-model="task.date"
-										step="1"
-										type="datetime-local"
-										placeholder="Enter Due Date..."
-										class="form-input rounded w-full"
-									/>
+									<div>
+										<label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+											Title
+										</label>
+										<input
+											v-model="task.title"
+											type="text"
+											name="title"
+											autocomplete="off"
+											placeholder="Enter Title..."
+											class="form-input rounded w-full mb-2"
+										/>
+									</div>
+
+									<div>
+										<label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+											Description
+										</label>
+										<textarea
+											v-model="task.description"
+											name="description"
+											placeholder="Enter Description..."
+											class="form-input rounded w-full mb-2"
+										/>
+									</div>
+
+									<div>
+										<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+											Due Date
+										</label>
+										<input
+											v-model="task.date"
+											step="1"
+											name="date"
+											type="datetime-local"
+											placeholder="Enter Due Date..."
+											class="form-input rounded w-full"
+										/>
+									</div>
 
 									<p class="text-red-500 text-sm mt-4 text-center" v-if="error">
 										{{ error }}

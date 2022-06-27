@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
 <template>
 	<main class="py-20">
 		<div class="max-w-md text-center mx-auto">
-			<h1 class="text-2xl font-semibold text-gray-700">Welcome to Trello Clone</h1>
+			<h1 class="text-2xl font-semibold text-gray-700">Welcome to Trello Vue</h1>
 			<p class="text-gray-500 mt-2">
 				A kanban board is an agile project management tool designed to help visualize work, limit
 				work-in-progress, and maximize efficiency (or flow).
