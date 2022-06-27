@@ -1,8 +1,3 @@
-<script setup>
-import BoardNav from "../components/BoardNav.vue";
-import BoardList from "../components/BoardList.vue";
-</script>
-
 <template>
 	<div class="flex flex-col h-screen bg-blue-600">
 		<BoardNav />
@@ -23,18 +18,14 @@ import BoardList from "../components/BoardList.vue";
 				<div class="flex-1 overflow-x-auto">
 					<div class="inline-flex h-full items-start px-4 pb-4 space-x-4">
 						<BoardList
-							v-for="(item, i) in Array.from({ length: 3 })"
-							:key="i"
+							v-for="list in lists"
+							:list="list"
+							:key="list.id"
 							class="w-72 bg-gray-200 max-h-full flex flex-col rounded-md"
 						/>
 
 						<div class="w-72">
-							<button
-								class="flex items-center bg-white/10 w-full hover:bg-white/20 text-white p-2 text-sm font-medium rounded-md"
-							>
-								➕
-								<span class="ml-1">Add another list</span>
-							</button>
+							<AddListForm />
 						</div>
 					</div>
 				</div>
@@ -42,3 +33,13 @@ import BoardList from "../components/BoardList.vue";
 		</main>
 	</div>
 </template>
+
+<script setup>
+import BoardNav from "../components/BoardNav.vue";
+import BoardList from "../components/BoardList.vue";
+import AddListForm from "../components/AddListForm.vue";
+import { useBoardStore } from "@/stores/board";
+
+const boardStore = useBoardStore();
+const lists = boardStore.lists;
+</script>
