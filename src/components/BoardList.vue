@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="pb-3 flex flex-col overflow-hidden">
-			<div class="px-3 flex-1 overflow-y-auto">
+			<div ref="listRef" class="px-3 flex-1 overflow-y-auto">
 				<Draggable
 					v-model="cards"
 					group="cards"
@@ -18,6 +18,7 @@
 					drag-class="drag"
 					ghost-class="ghost"
 					@change="onChange"
+					@move="onMove"
 				>
 					<template #item="{ element }">
 						<BoardCard :task="element" :list-id="list.id" />
@@ -26,7 +27,7 @@
 			</div>
 
 			<div class="px-3 mt-3">
-				<AddCardForm :list-id="list.id" />
+				<AddCardForm :list-id="list.id" @created="onCardCreated()" />
 			</div>
 		</div>
 	</div>
@@ -43,6 +44,12 @@ import { XIcon } from "@heroicons/vue/solid";
 const boardStore = useBoardStore();
 const props = defineProps({ list: Object });
 const cards = ref(props.list.items);
+const listRef = ref();
+
+// watch(
+// 	() => props.list.items,
+// 	(newCards) => (cards.value = newCards)
+// );
 
 function removeList() {
 	boardStore.removeList({
@@ -52,6 +59,16 @@ function removeList() {
 
 function onChange(e) {
 	console.log(e);
+}
+function onMove(e) {
+	console.log(e);
+	// console.log(e.dragged.__draggable_context.index);
+	// console.log(e.from.__draggable_component__.context.index);
+	// console.log(e.to.__draggable_component__.context.index);
+	// console.log(e.target.__draggable_component__.context.index);
+}
+function onCardCreated() {
+	listRef.value.scrollTop = listRef.value.scrollHeight;
 }
 </script>
 

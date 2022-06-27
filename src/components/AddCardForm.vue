@@ -122,6 +122,7 @@ import { TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle } f
 import { useBoardStore } from "@/stores/board";
 
 const props = defineProps({ listId: String });
+const emit = defineEmits(["created"]);
 
 const boardStore = useBoardStore();
 
@@ -159,7 +160,7 @@ function addNewCard() {
 	task.description = "";
 	task.date = "";
 	error.value = "";
-
+	emit("created");
 	closeModal();
 }
 </script>
