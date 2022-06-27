@@ -54,3 +54,17 @@ function onChange(e) {
 	console.log(e);
 }
 </script>
+
+<style scoped>
+::-webkit-scrollbar {
+	width: 7px;
+}
+::-webkit-scrollbar-track {
+	background: #d1d5db;
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+	background: #9ca3af;
+	border-radius: 4px;
+}
+</style>
