@@ -15,7 +15,7 @@
 			},
 			{
 				"title": "Child Safety Features",
-				"description": "",
+				"description": "Vivamus magna justo, lacinia eget consectetur sed.",
 				"date": "2022-06-30T15:12:57"
 			},
 			{
@@ -70,7 +70,7 @@
 		"items": [
 			{
 				"title": "Implement Marketing Landing Page",
-				"description": "",
+				"description": "Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
 				"date": "2022-06-28T15:12:57"
 			}
 		]
@@ -80,17 +80,17 @@
 		"items": [
 			{
 				"title": "Measure accuracy of open-source ML models",
-				"description": "",
+				"description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim.",
 				"date": "2022-06-26T15:12:57"
 			},
 			{
 				"title": "Design Marketing Landing Page",
-				"description": "",
+				"description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
 				"date": "2022-06-20T15:12:57"
 			},
 			{
 				"title": "Configure AWS Services - EC2, RDS, S3 ",
-				"description": "",
+				"description": "Nulla porttitor accumsan tincidunt.",
 				"date": "2022-06-15T15:12:57"
 			}
 		]
@@ -100,27 +100,27 @@
 		"items": [
 			{
 				"title": "Initiate the repository",
-				"description": "",
+				"description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
 				"date": "2022-06-10T15:12:57"
 			},
 			{
 				"title": "Create company account on AWS",
-				"description": "",
+				"description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
 				"date": "2022-06-01T15:12:57"
 			},
 			{
 				"title": "Decide the Tech-stack",
-				"description": "",
+				"description": "Curabitur aliquet quam id dui posuere blandit.",
 				"date": "2022-05-20T15:12:57"
 			},
 			{
 				"title": "Raise Seed Funding",
-				"description": "",
+				"description": "Quisque velit nisi, pretium ut lacinia in, elementum id enim.",
 				"date": "2022-05-25T15:12:57"
 			},
 			{
 				"title": "Validate the idea",
-				"description": "",
+				"description": "Sed porttitor lectus nibh.",
 				"date": "2022-05-02T15:12:57"
 			}
 		]
