@@ -1,19 +1,16 @@
-import Vue from 'vue'
-import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
-import { createPinia, PiniaVuePlugin } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
-Vue.use(VueCompositionAPI)
+const app = createApp(App);
 
-const app = createApp({
-  router,
-  pinia: createPinia(),
-  render: () => h(App)
-})
-app.use(PiniaVuePlugin)
+app.use(pinia);
+app.use(router);
 
-app.mount('#app')
+app.mount("#app");
