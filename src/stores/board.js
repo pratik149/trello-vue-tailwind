@@ -1,11 +1,11 @@
 import { defineStore } from "pinia";
 import { getItemById, getListById, getListByItemId } from "../utils/board";
 import { makeItem, makeList } from "../utils/board";
-
+import data from "../api/data.json";
 export const useBoardStore = defineStore({
 	id: "board",
 	state: () => ({
-		lists: [],
+		lists: data,
 	}),
 	getters: {
 		getListById: (state) => (listId) => {

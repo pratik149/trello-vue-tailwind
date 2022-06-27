@@ -1,0 +1,128 @@
+[
+	
+	{
+		"title": "Project Overview",
+		"items": [
+			{
+				"title": "Market study on all available Voice Assistants",
+				"description": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
+				"date": "2022-06-29T15:12:57"
+			},
+			{
+				"title": "Discuss on the state of the art ML solutions",
+				"description": "Proin eget tortor risus. Nulla porttitor accumsan tincidunt.",
+				"date": "2022-07-05T15:12:57"
+			},
+			{
+				"title": "Child Safety Features",
+				"description": "",
+				"date": "2022-06-30T15:12:57"
+			},
+			{
+				"title": "Discuss possible IoT applications",
+				"description": " Cras ultricies ligula sed magna dictum porta.",
+				"date": "2022-07-10T15:12:57"
+			},
+			{
+				"title": "Design the MVP",
+				"description": "Nulla quis lorem ut libero malesuada feugiat.",
+				"date": "2022-08-15T15:12:57"
+			},
+			{
+				"title": "Create Pitch Deck for Investors",
+				"description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+				"date": "2022-07-10T15:12:57"
+			},
+			{
+				"title": "Hire Engineers",
+				"description": "Donec sollicitudin molestie malesuada.",
+				"date": "2022-09-05T15:12:57"
+			}
+		]
+	},
+	{
+		"title": "Tasks",
+		"items": [
+			{
+				"title": "Conifgure Prettier and ESLint in the projects",
+				"description": "Nulla quis lorem ut libero malesuada feugiat.",
+				"date": "2022-06-30T15:12:57"
+			},
+			{
+				"title": "Design illustrations for social media",
+				"description": "Nulla porttitor accumsan tincidunt. Proin eget tortor risus. ",
+				"date": "2022-07-05T15:12:57"
+			},
+			{
+				"title": "Start marketing campaign on Facebook and LinkedIn",
+				"description": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.",
+				"date": "2022-07-10T15:12:57"
+			},
+			{
+				"title": "Register on Product Hunt",
+				"description": "Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+				"date": "2022-07-25T15:12:57"
+			}
+		]
+	},
+	{
+		"title": "In Progress",
+		"items": [
+			{
+				"title": "Implement Marketing Landing Page",
+				"description": "",
+				"date": "2022-06-28T15:12:57"
+			}
+		]
+	},
+	{
+		"title": "In Review",
+		"items": [
+			{
+				"title": "Measure accuracy of open-source ML models",
+				"description": "",
+				"date": "2022-06-26T15:12:57"
+			},
+			{
+				"title": "Design Marketing Landing Page",
+				"description": "",
+				"date": "2022-06-20T15:12:57"
+			},
+			{
+				"title": "Configure AWS Services - EC2, RDS, S3 ",
+				"description": "",
+				"date": "2022-06-15T15:12:57"
+			}
+		]
+	},
+	{
+		"title": "Completed",
+		"items": [
+			{
+				"title": "Initiate the repository",
+				"description": "",
+				"date": "2022-06-10T15:12:57"
+			},
+			{
+				"title": "Create company account on AWS",
+				"description": "",
+				"date": "2022-06-01T15:12:57"
+			},
+			{
+				"title": "Decide the Tech-stack",
+				"description": "",
+				"date": "2022-05-20T15:12:57"
+			},
+			{
+				"title": "Raise Seed Funding",
+				"description": "",
+				"date": "2022-05-25T15:12:57"
+			},
+			{
+				"title": "Validate the idea",
+				"description": "",
+				"date": "2022-05-02T15:12:57"
+			}
+		]
+	}
+]
