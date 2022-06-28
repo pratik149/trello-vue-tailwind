@@ -8,7 +8,7 @@
 				</p>
 			</div>
 			<div class="absolute top-1 right-1 bottom-1 hidden justify-between group-hover:grid">
-				<EditCardForm :task="task" />
+				<EditCard :task="task" />
 				<button @click="deleteTask" class="bg-gray-60 rounded-md px-2 hover:bg-gray-100">
 					<TrashIcon class="h-4 w-4 text-center text-red-500" />
 				</button>
@@ -19,7 +19,7 @@
 
 <script setup>
 import { useBoardStore } from "@/stores/board";
-import EditCardForm from "./EditCardForm.vue";
+import EditCard from "./EditCard.vue";
 import { TrashIcon } from "@heroicons/vue/solid";
 const props = defineProps({ task: Object, listId: String });
 
