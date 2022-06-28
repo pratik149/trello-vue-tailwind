@@ -1,14 +1,6 @@
 <template>
-	<button
-		type="button"
-		@click="openModal"
-		class="flex w-full items-center rounded-md p-2 text-sm font-medium text-gray-600 hover:bg-gray-300 hover:text-black"
-	>
-		➕ <span class="ml-1"> Add Card </span>
-	</button>
-
 	<TransitionRoot appear :show="isOpen" as="template">
-		<Dialog as="div" @close="closeModal">
+		<Dialog as="div" @close="emit('closeModal')">
 			<div class="fixed inset-0 z-10 overflow-y-auto">
 				<div class="min-h-screen px-4 text-center">
 					<TransitionChild
@@ -38,11 +30,11 @@
 							class="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
 						>
 							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
-								Add Task
+								{{ isEdit ? "Edit Task" : "Add Task" }}
 							</DialogTitle>
 
 							<div class="mt-4">
-								<form action="" @submit.prevent="addNewCard" class="w-full">
+								<form action="" @submit.prevent="isEdit ? updateCard() : addNewCard()" class="w-full">
 									<div>
 										<label class="mb-2 block text-sm font-bold text-gray-700" for="title">
 											Title
@@ -92,7 +84,7 @@
 											<button
 												type="button"
 												class="float-left inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-												@click="closeModal"
+												@click="emit('closeModal')"
 											>
 												Cancel
 											</button>
@@ -102,7 +94,7 @@
 												type="submit"
 												class="float-right inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
 											>
-												Create
+												{{ isEdit ? "Save" : "Create" }}
 											</button>
 										</div>
 									</div>
@@ -121,27 +113,30 @@ import { ref, reactive } from "vue";
 import { TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle } from "@headlessui/vue";
 import { useBoardStore } from "@/stores/board";
 
-const props = defineProps({ listId: String });
-const emit = defineEmits(["created"]);
+const props = defineProps({
+	listId: String,
+	task: Object,
+	isOpen: {
+		type: Boolean,
+		default: false,
+	},
+	isEdit: {
+		type: Boolean,
+		default: false,
+	},
+});
+
+const emit = defineEmits(["onCardCreated", "closeModal"]);
 
 const boardStore = useBoardStore();
 
-const isOpen = ref(false);
-
 let task = reactive({
-	title: "",
-	description: "",
-	date: "",
+	title: props.isEdit ? props.task.title : "",
+	description: props.isEdit ? props.task.description : "",
+	date: props.isEdit ? props.task.date : "",
 });
 
 let error = ref("");
-
-function closeModal() {
-	isOpen.value = false;
-}
-function openModal() {
-	isOpen.value = true;
-}
 
 function addNewCard() {
 	if (!task.title) {
@@ -160,7 +155,25 @@ function addNewCard() {
 	task.description = "";
 	task.date = "";
 	error.value = "";
-	emit("created");
-	closeModal();
+	emit("onCardCreated");
+	emit("closeModal");
+}
+
+function updateCard() {
+	if (!task.title) {
+		error.value = "Title field is required";
+		return;
+	}
+
+	boardStore.updateItem({
+		itemId: props.task.id,
+		title: task.title,
+		description: task.description,
+		date: task.date,
+	});
+
+	error.value = "";
+
+	emit("closeModal");
 }
 </script>

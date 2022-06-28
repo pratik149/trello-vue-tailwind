@@ -29,8 +29,22 @@
 
 			<!-- Add Card -->
 			<div class="mt-3 px-3">
-				<AddCard :list-id="list.id" @created="onCardCreated()" />
+				<button
+					type="button"
+					@click="openModal"
+					class="flex w-full items-center rounded-md p-2 text-sm font-medium text-gray-600 hover:bg-gray-300 hover:text-gray-800"
+				>
+					<PlusIcon class="h-5 w-5" /> <span class="ml-1"> Add Card </span>
+				</button>
 			</div>
+
+			<AddCard
+				v-if="isOpen"
+				:is-open="isOpen"
+				:list-id="list.id"
+				@on-card-created="onCardCreated()"
+				@close-modal="closeModal"
+			/>
 		</div>
 	</div>
 </template>
@@ -45,7 +59,7 @@ import TheCard from "../components/TheCard.vue";
 import AddCard from "../components/AddCard.vue";
 
 // Icons
-import { XIcon } from "@heroicons/vue/solid";
+import { XIcon, PlusIcon } from "@heroicons/vue/solid";
 
 // Store
 import { useBoardStore } from "@/stores/board";
@@ -60,15 +74,24 @@ const listItems = ref(props.list.items);
 // Emits
 const emit = defineEmits(["onStart", "onDrop"]);
 
-// Methods
+// Modal Open/Close Methods
+const isOpen = ref(false);
+function openModal() {
+	isOpen.value = true;
+}
+function closeModal() {
+	isOpen.value = false;
+}
+
+// Drag n' Drop Methods
 function onStart(evt) {
 	emit("onStart", { evt });
 }
-
 function onDrop(evt, listId) {
 	emit("onDrop", { evt, listId });
 }
 
+// List Methods
 function removeList(listId) {
 	boardStore.removeList({
 		listId: listId,

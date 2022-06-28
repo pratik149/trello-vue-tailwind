@@ -83,13 +83,11 @@ import { ref, reactive } from "vue";
 import { TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle } from "@headlessui/vue";
 import { useBoardStore } from "@/stores/board";
 
+// Store
 const boardStore = useBoardStore();
 
+// Modal Open/Close
 const isOpen = ref(false);
-let list = reactive({
-	title: "",
-});
-
 function closeModal() {
 	isOpen.value = false;
 }
@@ -97,6 +95,10 @@ function openModal() {
 	isOpen.value = true;
 }
 
+// List Methods
+let list = reactive({
+	title: "",
+});
 function addNewList() {
 	boardStore.addList({ title: list.title });
 	list.title = "";

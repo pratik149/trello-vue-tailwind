@@ -60,6 +60,7 @@ import { useBoardStore } from "@/stores/board";
 const boardStore = useBoardStore();
 const lists = boardStore.lists;
 
+// Drag n' Drop Methods
 function onDragStart({ evt }) {
 	evt.dataTransfer.dropEffect = "move";
 	evt.dataTransfer.effectAllowed = "move";
