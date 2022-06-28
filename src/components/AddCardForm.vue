@@ -2,7 +2,7 @@
 	<button
 		type="button"
 		@click="openModal"
-		class="flex items-center p-2 text-sm font-medium text-gray-600 hover:text-black hover:bg-gray-300 w-full rounded-md"
+		class="flex w-full items-center rounded-md p-2 text-sm font-medium text-gray-600 hover:bg-gray-300 hover:text-black"
 	>
 		➕ <span class="ml-1"> Add Card </span>
 	</button>
@@ -35,7 +35,7 @@
 						leave-to="opacity-0 scale-95"
 					>
 						<div
-							class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+							class="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
 						>
 							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
 								Add Task
@@ -44,7 +44,7 @@
 							<div class="mt-4">
 								<form action="" @submit.prevent="addNewCard" class="w-full">
 									<div>
-										<label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+										<label class="mb-2 block text-sm font-bold text-gray-700" for="title">
 											Title
 										</label>
 										<input
@@ -53,24 +53,24 @@
 											name="title"
 											autocomplete="off"
 											placeholder="Enter Title..."
-											class="form-input rounded w-full mb-2"
+											class="form-input mb-2 w-full rounded"
 										/>
 									</div>
 
 									<div>
-										<label class="block text-gray-700 text-sm font-bold mb-2" for="description">
+										<label class="mb-2 block text-sm font-bold text-gray-700" for="description">
 											Description
 										</label>
 										<textarea
 											v-model="task.description"
 											name="description"
 											placeholder="Enter Description..."
-											class="form-input rounded w-full mb-2"
+											class="form-input mb-2 w-full rounded"
 										/>
 									</div>
 
 									<div>
-										<label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+										<label class="mb-2 block text-sm font-bold text-gray-700" for="date">
 											Due Date
 										</label>
 										<input
@@ -79,11 +79,11 @@
 											name="date"
 											type="datetime-local"
 											placeholder="Enter Due Date..."
-											class="form-input rounded w-full"
+											class="form-input w-full rounded"
 										/>
 									</div>
 
-									<p class="text-red-500 text-sm mt-4 text-center" v-if="error">
+									<p class="mt-4 text-center text-sm text-red-500" v-if="error">
 										{{ error }}
 									</p>
 
@@ -91,7 +91,7 @@
 										<div>
 											<button
 												type="button"
-												class="float-left inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
+												class="float-left inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
 												@click="closeModal"
 											>
 												Cancel
@@ -100,7 +100,7 @@
 										<div>
 											<button
 												type="submit"
-												class="float-right inline-flex justify-center px-4 py-2 text-sm font-medium text-green-900 bg-green-100 border border-transparent rounded-md hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500"
+												class="float-right inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
 											>
 												Create
 											</button>

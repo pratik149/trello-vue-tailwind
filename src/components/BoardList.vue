@@ -1,14 +1,14 @@
 <template>
-	<div class="w-72 bg-gray-200 max-h-full flex flex-col rounded-md">
+	<div class="flex max-h-full w-72 flex-col rounded-md bg-gray-200">
 		<div class="flex items-center justify-between px-3 py-2">
 			<h3 class="text-sm font-semibold text-gray-700">{{ list.title }}</h3>
-			<button class="hover:bg-gray-300 w-8 h-8 rounded-md grid place-content-center" @click="removeList">
+			<button class="grid h-8 w-8 place-content-center rounded-md hover:bg-gray-300" @click="removeList">
 				<XIcon class="h-5 w-5 text-gray-400" />
 			</button>
 		</div>
 
-		<div class="pb-3 flex flex-col overflow-hidden">
-			<div ref="listRef" class="px-3 flex-1 overflow-y-auto">
+		<div class="flex flex-col overflow-hidden pb-3">
+			<div ref="listRef" class="flex-1 overflow-y-auto px-3">
 				<Draggable
 					v-model="cards"
 					group="cards"
@@ -26,7 +26,7 @@
 				</Draggable>
 			</div>
 
-			<div class="px-3 mt-3">
+			<div class="mt-3 px-3">
 				<AddCardForm :list-id="list.id" @created="onCardCreated()" />
 			</div>
 		</div>

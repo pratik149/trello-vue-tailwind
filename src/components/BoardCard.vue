@@ -1,16 +1,16 @@
 <template>
-	<li class="group relative bg-white p-3 shadow rounded-md border-b border-gray-300 hover:bg-gray-50">
+	<li class="group relative rounded-md border-b border-gray-300 bg-white p-3 shadow hover:bg-gray-50">
 		<div>
 			<div class="">
 				<h5 class="font-semibold text-gray-800">{{ task.title }}</h5>
-				<p class="max-w-max rounded-sm px-2 py-1 bg-blue-100 mt-2 text-xs text-gray-600 font-semibold">
+				<p class="mt-2 max-w-max rounded-sm bg-blue-100 px-2 py-1 text-xs font-semibold text-gray-600">
 					{{ task.date ? $dayjs(task.date).format("MMM DD, ddd") : "No Date" }}
 				</p>
 			</div>
-			<div class="hidden absolute top-1 right-1 bottom-1 group-hover:grid justify-between">
+			<div class="absolute top-1 right-1 bottom-1 hidden justify-between group-hover:grid">
 				<EditCardForm :task="task" />
-				<button @click="deleteTask" class="bg-gray-60 rounded-md hover:bg-gray-100 px-2">
-					<TrashIcon class="text-center h-4 w-4 text-red-500" />
+				<button @click="deleteTask" class="bg-gray-60 rounded-md px-2 hover:bg-gray-100">
+					<TrashIcon class="h-4 w-4 text-center text-red-500" />
 				</button>
 			</div>
 		</div>

@@ -1,17 +1,17 @@
 <template>
-	<div class="flex flex-col h-screen bg-blue-600">
+	<div class="flex h-screen flex-col bg-blue-600">
 		<!-- Navbar -->
 		<BoardNav />
 
 		<!-- Board Screen -->
 		<main class="flex-1 overflow-hidden">
-			<div class="flex flex-col h-full">
+			<div class="flex h-full flex-col">
 				<!-- Board Title -->
-				<div class="shrink-0 flex justify-between items-center p-4">
-					<h1 class="text-2xl text-white font-bold">Wall-E</h1>
+				<div class="flex shrink-0 items-center justify-between p-4">
+					<h1 class="text-2xl font-bold text-white">Wall-E</h1>
 					<div>
 						<button
-							class="inline-flex items-center bg-white/10 hover:bg-white/20 px-3 py-2 font-medium text-sm text-white rounded-md"
+							class="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
 						>
 							<CogIcon class="h-5 w-5 text-gray-300" />
 							<span class="ml-2"> Settings</span>
@@ -21,19 +21,19 @@
 
 				<!-- Board Lists -->
 				<div class="flex-1 overflow-x-auto">
-					<div class="inline-flex h-full items-start px-4 pb-4 space-x-4">
+					<div class="inline-flex h-full items-start space-x-4 px-4 pb-4">
 						<div
 							v-for="list in lists"
 							:list="list"
 							:key="list.id"
 							@drop="onDrop($event, list.id)"
-							class="w-72 bg-gray-200 max-h-full flex flex-col rounded-md"
+							class="flex max-h-full w-72 flex-col rounded-md bg-gray-200"
 						>
 							<!-- List Title -->
 							<div class="flex items-center justify-between px-3 py-2">
 								<h3 class="text-sm font-semibold text-gray-700">{{ list.title }}</h3>
 								<button
-									class="hover:bg-gray-300 w-8 h-8 rounded-md grid place-content-center"
+									class="grid h-8 w-8 place-content-center rounded-md hover:bg-gray-300"
 									@click="removeList(list.id)"
 								>
 									<XIcon class="h-5 w-5 text-gray-400" />
@@ -41,8 +41,8 @@
 							</div>
 
 							<!-- List Cards -->
-							<div class="pb-3 flex flex-col overflow-hidden">
-								<div ref="listRef" class="px-3 flex-1 overflow-y-auto">
+							<div class="flex flex-col overflow-hidden pb-3">
+								<div ref="listRef" class="flex-1 overflow-y-auto px-3">
 									<Draggable
 										v-model="list.items"
 										group="cards"
@@ -60,7 +60,7 @@
 								</div>
 
 								<!-- Add Card -->
-								<div class="px-3 mt-3">
+								<div class="mt-3 px-3">
 									<AddCardForm :list-id="list.id" @created="onCardCreated()" />
 								</div>
 							</div>

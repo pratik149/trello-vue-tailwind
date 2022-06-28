@@ -2,7 +2,7 @@
 	<button
 		type="button"
 		@click="openModal"
-		class="flex items-center bg-white/10 w-full hover:bg-white/20 text-white p-2 text-sm font-medium rounded-md"
+		class="flex w-full items-center rounded-md bg-white/10 p-2 text-sm font-medium text-white hover:bg-white/20"
 	>
 		➕ <span class="ml-1"> Add Another List </span>
 	</button>
@@ -35,7 +35,7 @@
 						leave-to="opacity-0 scale-95"
 					>
 						<div
-							class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+							class="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
 						>
 							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
 								New List
@@ -47,13 +47,13 @@
 										v-model="list.title"
 										type="text"
 										placeholder="Enter Title..."
-										class="form-input rounded w-full"
+										class="form-input w-full rounded"
 									/>
 									<div class="mt-4">
 										<div>
 											<button
 												type="button"
-												class="float-left inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
+												class="float-left inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
 												@click="closeModal"
 											>
 												Cancel
@@ -62,7 +62,7 @@
 										<div>
 											<button
 												type="submit"
-												class="float-right inline-flex justify-center px-4 py-2 text-sm font-medium text-green-900 bg-green-100 border border-transparent rounded-md hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500"
+												class="float-right inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
 											>
 												Create
 											</button>
