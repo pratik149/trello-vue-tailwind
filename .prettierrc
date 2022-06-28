@@ -3,7 +3,7 @@
 	"arrowParens": "always",
 	"trailingComma": "es5",
 	"singleQuote": false,
-	"endOfLine": "lf",
+	"endOfLine": "crlf",
 	"printWidth": 120,
 	"useTabs": true,
 	"tabWidth": 4
