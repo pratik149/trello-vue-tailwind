@@ -24,3 +24,10 @@ export function getItemById(lists, itemId) {
 		return list.items.find((item) => item.id === itemId);
 	}
 }
+
+export function getIndexOfItemById(lists, itemId) {
+	const list = lists.find((list) => list.items.find((item) => item.id === itemId));
+	if (list) {
+		return list.items.findIndex((item) => item.id === itemId);
+	}
+}
